@@ -1,6 +1,6 @@
-function Power
+function reverse 
 { 
-      
+   
     [CmdletBinding(DefaultParameterSetName="reverse")] Param(
 
         [Parameter(Position = 0, Mandatory = $true, ParameterSetName="reverse")]
@@ -87,3 +87,4 @@ function Power
         Write-Error $_
     }
 }
+
