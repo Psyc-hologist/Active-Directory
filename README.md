@@ -8,6 +8,20 @@ powershell -c
 powershell -encodedcommand
 $env:PSExecutionPolicyReference="bypass"
 ```
+### Check PowerShell Remoting is enabled
+```
+Test-WSMan -ComputerName SRV1
+Get-Service WinRM -ComputerName SRV1,SRV2,SRV3 | Select MachineName,Name,Status,StartupType
+Test-WSMan -ComputerName SRV2 -Credential Company\Administrator
+Test-WSMan -ComputerName SRV2 -Credential Company\Administrator -Authentication Default
+```
+
+### Enable PowerShell Remoting using PowerShell
+```
+Enable-PSRemoting
+Enable-PSRemoting -Force
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+```
 
 ### Powershell Modules
 ```
